@@ -14,13 +14,27 @@ EatingTask = [
     "Plan your next meal",
     "Eat a cheat meal",
 ]
+
+journalTask = [
+    "Journal 3 good things that have happened today",
+    "Write down a short term or long term goal",
+    "Journal 3 things you are grateful for"
+]
+
+connectionTask = [
+    "Send a text or talk to someone in person",
+    "Leave a comment on someone's social media post"
+]
+
 class Tasks():
     def __init__ (self):
         self.randomNum = [] #Array of rand nums
         self.map = {
             1 : "DrinkTask",
             2 : "WalkingTask",
-            3 : "EatingTask"
+            3 : "EatingTask",
+            4 : "journalTask",
+            5 : "connectionTask"
         }
         
     def getRandom(self, loops = 5, highRange=8):
