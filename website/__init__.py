@@ -20,7 +20,9 @@ def create_app():
 
     from .models import User, Note #loads the modles to make sure it defigns the classes in the table'
 
-    create_database(app)
+    #create_database(app)
+    with app.app_context():
+        db.create_all()
 
     return app
 

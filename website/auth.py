@@ -46,5 +46,5 @@ def social():
 
 #Profile page
 @auth.route('/profile')
-def social():
+def profile():
     return "<p>Your trophies and tasks/p>"
