@@ -19,7 +19,9 @@ class Profile:
     def get_age(self):
         return self._age
     
-    def increment_age(self):
+    #lowkey i might want to get rid of age class variable because we have to keep track
+    #of birthday in order to increment it
+    def increment_age(self): 
         self._age += 1
 
     def change_zip(self, newZip):
