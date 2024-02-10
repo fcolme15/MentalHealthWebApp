@@ -68,4 +68,4 @@ def social():
 #Profile page
 @auth.route('/profile')
 def profile():
-    return "Your trophies and tasks"
+    return render_template('profile.html')
