@@ -6,8 +6,8 @@ class Tasks():
 
 
 
-    def getRandom(self):
-        for random in range (7):
-            result = randint(1,8) #random number 1-8
+    def getRandom(self, loops = 5, highRange=8):
+        for random in range (loops):
+            result = randint(1,highRange) #random number 1-8
             self.randomNum.append(result)
 
