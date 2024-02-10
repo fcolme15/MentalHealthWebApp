@@ -6,6 +6,8 @@ auth = Blueprint('auth',__name__)
 
 #login page
 @auth.route('/login')
+@auth.route('/')
+@auth.route('/home')
 def login():
     return "<p>Login</p>"
 
@@ -23,3 +25,8 @@ def signup():
 @auth.route('/social')
 def social():
     return "<p>Your friends here</p>"
+
+#Profile page
+@auth.route('/profile')
+def social():
+    return "<p>Your trophies and tasks/p>"
