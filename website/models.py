@@ -14,10 +14,8 @@ class UserLogin(db.Model, UserMixin): #stores information for a profile
     user_profiles = db.relationship('UserProfile')
 
 class UserProfile(db.Model):
-    user_profile_id = db.Column(db.Integer, primary_key = True)
+    user_profile_id = db.Column(db.Integer, primary_key = True, unique = True)
     user_id = db.Column(db.Integer, db.ForeignKey('user_login.user_id'), nullable = False)
-    age = db.Column(db.Integer)
-    zip_code = db.Column(db.Integer)
     num_flowers = db.Column(db.Integer)
     flower_status = db.Column(db.Boolean)
     carryover = db.Column(db.Boolean)
