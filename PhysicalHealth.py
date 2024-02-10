@@ -1,4 +1,6 @@
+from Tasks import Tasks
 
-class PhysicalTask():
+class PhysicalTask(Tasks):
     def __init__ (self):
         self.task
+
