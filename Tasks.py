@@ -31,7 +31,9 @@ class Tasks():
         self.map = {
             1 : "DrinkTask",
             2 : "WalkingTask",
-            3 : "EatingTask"
+            3 : "EatingTask",
+            4 : "journalTask",
+            5 : "connectionTask"
         }
         
 
