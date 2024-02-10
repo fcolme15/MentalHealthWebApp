@@ -3,17 +3,21 @@ from . import db #from this package import sqlalchemy
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
-# class Note(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     data = db.Column(db.String(10000))
-#     date = db.Column(db.DateTime(timezone=True), default=func.now()) ##just grabs the date and time when this account was created 
-#     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) #the type of the col is an id and this foreignkey must be one user.id and it must be valid
-    
 #if need more tables just do more class whatever()
+#each class is a table in the models.py
 
-class User(db.Model, UserMixin): #THE TABLE!!!!
-    id = db.Column(db.Integer, primary_key=True)
+    
+class UserLogin(db.Model, UserMixin): #stores information for a profile
+    user_id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(9), unique = True)
     password = db.Column(db.String(9))
-    ######## notes = db.relationship('Note')#tells flask and sql add a note the note id. Its a list of all notes
-        
+    user_profiles = db.relationship('UserProfile')
+
+class UserProfile(db.Model):
+    user_profile_id = db.Column(db.Integer, primary_key = True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user_login.user_id'), nullable = False)
+    age = db.Column(db.Integer)
+    zip_code = db.Column(db.Integer)
+    num_flowers = db.Column(db.Integer)
+    flower_status = db.Column(db.Boolean)
+    carryover = db.Column(db.Boolean)

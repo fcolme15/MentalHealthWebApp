@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User, db
+from .models import UserLogin, db
 from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint('auth',__name__) 
@@ -13,7 +13,7 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
 
-        user = User.query.filter_by(username = username).first()
+        user = UserLogin.query.filter_by(username = username).first()
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category = 'success')
@@ -37,7 +37,7 @@ def signup():
         username = request.form.get('username') #GETS the info from user input ans shoves in vars
         password = request.form.get('password')
 
-        user = User.query.filter_by(username = username).first()
+        user = UserLogin.query.filter_by(username = username).first()
 
         #message flashing for future events will be comment it out with import flash
         #for example if(len(username)<4{flash('Please make a username greatuer then 4',category='error')})
@@ -52,8 +52,8 @@ def signup():
         elif(len(username))>8:
             {flash('Please make a username less then 8',category='error')}
         else:
-            new_user = User(username = username, password = generate_password_hash(password, method='pbkdf2:sha256'))
-            db.session.add(new_user)
+            new_user_login = UserLogin(username = username, password = generate_password_hash(password, method='pbkdf2:sha256'))
+            db.session.add(new_user_login)
             db.session.commit()
             flash('Account created!!!!',category='good')
             return redirect(url_for('views.home'))

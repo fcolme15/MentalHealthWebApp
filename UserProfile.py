@@ -1,15 +1,18 @@
 import Tasks
 
-class Profile:
-    def __init__(self, username, age, zipCode, numFlowers = 0, isFlowerDone = False, isCarryover = False):
-        self._username = username #implement getters/setters (ability to change)
-        self._age = age 
-        self._zipCode = zipCode #implement getters/setters (ability to change)
-        self.numFlowers = numFlowers #just set to 0 for now because the user will start w/ no flowers
-        self._flowerStatus = isFlowerDone
-        self.carryover = isCarryover #will be for checking if flower transfers to next day
+class User_Profile:
+    username = dbColumn(db.String(9), unique = True)
+    id = 
+    # def __init__(self, username, userID, age, zipCode, numFlowers = 0, isFlowerDone = False, isCarryover = False):
+    #     self._username = username #implement getters/setters (ability to change)
+    #     self._age = age 
+    #     self._userID = userID
+    #     self._zipCode = zipCode #implement getters/setters (ability to change)
+    #     self.numFlowers = numFlowers #just set to 0 for now because the user will start w/ no flowers
+    #     self._flowerStatus = isFlowerDone
+    #     self.carryover = isCarryover #will be for checking if flower transfers to next day
 
-        #TO DO: add task class variable
+    #     #TO DO: add task class variable
 
     def get_username(self):
         return self._username
