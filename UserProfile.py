@@ -1,5 +1,3 @@
-
-
 class Profile:
     def __init__(self, username, age, zipCode, numFlowers = 0, isFlowerDone = False, isCarryover = False):
         self._username = username #implement getters/setters (ability to change)
