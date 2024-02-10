@@ -1,3 +1,5 @@
+import Tasks
+
 class Profile:
     def __init__(self, username, age, zipCode, numFlowers = 0, isFlowerDone = False, isCarryover = False):
         self._username = username #implement getters/setters (ability to change)
@@ -6,6 +8,8 @@ class Profile:
         self.numFlowers = numFlowers #just set to 0 for now because the user will start w/ no flowers
         self._flowerStatus = isFlowerDone
         self.carryover = isCarryover #will be for checking if flower transfers to next day
+
+        #TO DO: add task class variable
 
     def get_username(self):
         return self._username
@@ -36,3 +40,5 @@ class Profile:
 
     def carry_flower(self): #will be used on days when self.get_status == false
         self.carryover = True 
+
+    #test in main initializing Profile objects along with the functions all of em
