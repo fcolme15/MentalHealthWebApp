@@ -18,7 +18,7 @@ def create_app():
     app.register_blueprint(views, url_prefix='/') #all urls are here in the blue print files
     app.register_blueprint(auth, url_prefix='/') #we can make a prefix so if you wanted to go to any page in the website you would fix the /something to add a prefix to any website url page
 
-    from .models import User, Note #loads the modles to make sure it defigns the classes in the table'
+    from .models import User########, Note #loads the modles to make sure it defigns the classes in the table'
 
     #create_database(app)
     with app.app_context():
