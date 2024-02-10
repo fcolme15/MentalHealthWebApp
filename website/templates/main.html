@@ -39,29 +39,44 @@
       </div>
     </nav>
     <!-- end of line bar and title-->
-    <h1>Hello people</h1>
-      <!-- Table-->
-      <table class="table table-hover table-dark">
-        <thead>
-            <tr>
-                <!-- Your Columns HERE -->
-                <th scope="col">ID</th>
-                <th scope="col">Options</th>>something </th>
-                <th scope="col">Options</th>>something else</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Your rows inside the table HERE: -->
+    <h1></h1>
+      <!-- Table
+      
+      {% block content %}-->
+ 
+      <div class="row" style="margin-top:20px; margin-right:20px">
+        <div class="col-8">
+
+          <table class="table table-hover table-dark">
+
+            <thead>
                 <tr>
-                    <td>Value for Id</td>
-                    <td>
-                      <button class="btn btn-outline btn-info"> More Info blue</button>
-                      <button class="btn btn-outline btn-info">  Info green</button>
-                    </td>
+                    <!-- Your Columns HERE -->
+                    <th scope="col">ID</th>
+                    <th scope="col">Options</th> </th>
+                    <th scope="col">Options</th></th>
                 </tr>
-        </tbody>
-    </table>
-    <!-- end Table-->
+            </thead>
+            <tbody>
+                <!-- Your rows inside the table HERE: {% for item in items %} {% endfor %}-->
+                
+                    <tr>
+                        <td>Value for Id</td>
+                        <td>
+                          <button class="btn btn-outline btn-info"> More Info blue</button>
+                          <button class="btn btn-outline btn-success">  Info green</button>
+                        </td>
+                    </tr>
+                    
+            </tbody>
+        </table>
+        </div>
+        <div class="col-4"></div>
+      </div>
+
+    
+    <!-- end Table
+    {% endblock %}-->
 
 
     <!-- Optional JavaScript; choose one of the two! -->
