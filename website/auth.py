@@ -5,7 +5,9 @@ auth = Blueprint('auth',__name__)
 #this holds all the pages that the user can go to 
 
 #login page
-@auth.route('/login', methods =['GET','POST'])
+@auth.route('/login')
+@auth.route('/')
+@auth.route('/home')
 def login():
     return render_template("login.html", username = "hold", password = "123 I LOVE UIC!!!", boolean = True)
 
@@ -38,6 +40,11 @@ def signup():
     return render_template("sign_up.html")
 
 #social page
-#@auth.route('/social')
-#def social():
-#    return "<p>Your friends here</p>"
+@auth.route('/social')
+def social():
+    return "<p>Your friends here</p>"
+
+#Profile page
+@auth.route('/profile')
+def social():
+    return "<p>Your trophies and tasks/p>"
