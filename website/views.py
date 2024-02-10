@@ -5,4 +5,4 @@ views = Blueprint('views',__name__)
 
 @views.route('/')#this will hold the main landing page
 def home():
-    return "<h1>Test</h1>"
+    return "<h1>I LOVE CODING!!!</h1>"
