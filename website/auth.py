@@ -5,11 +5,9 @@ auth = Blueprint('auth',__name__)
 #this holds all the pages that the user can go to 
 
 #login page
-@auth.route('/login')
-@auth.route('/')
-@auth.route('/home')
+@auth.route('/login', methods =['GET','POST'])
 def login():
-    return render_template("login.html", username = "hold", password = "123 I LOVE UIC!!!", boolean = True)
+    return render_template("login.html", boolean = True)
 
 #logout page
 @auth.route('/logout')

@@ -23,10 +23,11 @@ def create_app():
     #create_database(app)
     with app.app_context():
         db.create_all()
+        print('Created Database!')
 
     return app
 
-def create_database(app):
-    if not path.exists('website/' + DB_Name):
-        db.create_all(app=app) #1:33:44 error when creating the fucking table 
-        print('Created Database!')
+#def create_database(app):
+#    if not path.exists('website/' + DB_Name):
+#        db.create_all(app=app) #1:33:44 error when creating the fucking table 
+#        print('Created Database!')
