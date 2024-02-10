@@ -1,9 +1,11 @@
+
+
 class Profile:
-    def __init__(self, username, age, location, numFlowers = 0, ):
+    def __init__(self, username, age, location, numFlowers = 0):
         self._username = username #implement getters/setters (ability to change)
         self._age = age 
         self._location = location #implement getters/setters (ability to change)
-        self._numFlowers = numFlowers #just set to 0 for now because the user will start w/ no flowers
+        self.numFlowers = numFlowers #just set to 0 for now because the user will start w/ no flowers
 
     def get_username(self):
         return self._username
@@ -21,4 +23,5 @@ class Profile:
     def change_location(self, newLoc):
         self._location = newLoc
 
-    def 
+    def increment_flowers(self):
+        self.numFlowers += 1
