@@ -2,6 +2,7 @@
 from . import db #from this package import sqlalchemy
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+from sqlalchemy import CheckConstraint
 
 #if need more tables just do more class whatever()
 #each class is a table in the models.py
@@ -19,3 +20,9 @@ class UserProfile(db.Model):
     num_flowers = db.Column(db.Integer)
     flower_status = db.Column(db.Boolean)
     carryover = db.Column(db.Boolean)
+    num_tasks_completed = db.Column(db.Integer) 
+    task_completion = db.Column(db.Boolean)
+
+    __table_args__ = (
+        CheckConstraint('num_tasks_completed <= 5'),
+    )

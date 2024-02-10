@@ -55,7 +55,8 @@ def signup():
             new_user_login = UserLogin(username = username, password = generate_password_hash(password, method='pbkdf2:sha256'))
             db.session.add(new_user_login)
             db.session.commit()
-            new_user_profile = UserProfile(num_flowers = 0, flower_status = False, carryover = False, user_id = new_user_login.user_id)
+            new_user_profile = UserProfile(num_flowers = 0, flower_status = False, carryover = False, 
+                                           user_id = new_user_login.user_id, num_tasks_completed = 0, task_completion = False)
             db.session.add(new_user_profile)
             db.session.commit()
             flash('Account created!!!!',category='good')
