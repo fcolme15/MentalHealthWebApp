@@ -2,7 +2,7 @@ import Tasks
 
 class User_Profile:
     username = dbColumn(db.String(9), unique = True)
-    id = 
+    #id = 
     # def __init__(self, username, userID, age, zipCode, numFlowers = 0, isFlowerDone = False, isCarryover = False):
     #     self._username = username #implement getters/setters (ability to change)
     #     self._age = age 
